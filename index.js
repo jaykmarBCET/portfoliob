@@ -17,7 +17,7 @@ app.use(express.json({limit:'50mb',extended:true}));
 app.use(express.urlencoded({extended:true,limit:'50mb'}))
 app.use(cookieParser());
 app.use(cors({
-  origin:"http://localhost:5173",
+  origin:"https://portfoliojaykumar.netlify.app",
   methods:["POST","PATCH","DELETE","GET","PUT"],
   credentials:true
 }));
@@ -26,7 +26,11 @@ app.use("/api", SetUpRoutes);
 app.use("/api",Account)
 app.use("/api",Feedback)
 app.use('/api/grab',GrabRouter)
-
+app.get('/',(req,res)=>{
+  return res.status(200).json({
+    message:"all ok"
+  })
+})
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
