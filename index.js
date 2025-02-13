@@ -19,7 +19,7 @@ app.use(cookieParser());
 
 let baseUrl = "https://portfoliojaykumar.netlify.app"
 app.use(cors({
-  origin:"http://localhost:5173",
+  origin:baseUrl,
   methods:["POST","PATCH","DELETE","GET","PUT"],
   credentials:true
 }));
