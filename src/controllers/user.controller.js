@@ -56,7 +56,7 @@ const login = AsyncHandler(async (req, res) => {
     if (!token) {
         return res.status(500).json(new ApiResponse(500, { message: "Token generation failed" }, "Token generation failed"));
     }
-    return res.status(200).cookie("token", token, { httpOnly: true, secure: true }).json(new ApiResponse(200, user, "Logged in successfully"));
+    return res.status(200).cookie("token", token, { httpOnly: true, secure: true }).json(new ApiResponse(200, {...user,token}, "Logged in successfully"));
 });
 
 const currentUser = AsyncHandler(async (req, res) => {

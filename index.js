@@ -16,8 +16,10 @@ const app = express();
 app.use(express.json({limit:'50mb',extended:true}));
 app.use(express.urlencoded({extended:true,limit:'50mb'}))
 app.use(cookieParser());
+
+let baseUrl = "https://portfoliojaykumar.netlify.app"
 app.use(cors({
-  origin:"https://portfoliojaykumar.netlify.app",
+  origin:"http://localhost:5173",
   methods:["POST","PATCH","DELETE","GET","PUT"],
   credentials:true
 }));
