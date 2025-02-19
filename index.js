@@ -20,7 +20,7 @@ app.use(cookieParser());
 // Allowed origins (Local + Deployed Frontend)
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://portfoliojaykumar.netlify.app"  // Change this to your actual deployed frontend URL
+  "https://portfoliojaykumar.netlify.app"  
 ];
 
 app.use(cors({
