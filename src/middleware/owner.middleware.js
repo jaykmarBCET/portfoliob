@@ -3,7 +3,10 @@ import JWT from 'jsonwebtoken';
 import { User } from "../model/user.model.js";
 
 const verifyOwner = AsyncHandler(async (req, res, next) => {
-    const token = req.cookies?.token;
+ 
+    const token = req.cookies.jwt || req.cookies?.token 
+    
+    
     
 
     if (!token) {
